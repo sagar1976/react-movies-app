@@ -50,7 +50,13 @@ class Header extends Component {
     }
 
     openModalHandler = () => {
-        this.setState({modalIsOpen : true});
+        this.setState({ modalIsOpen: true });
+        this.setState({
+            modalIsOpen: true,
+            value: 0,
+            usernameRequired: "dispNone",
+            username: ""
+        });
     }
 
     closeModalHandler = () => {
@@ -86,7 +92,8 @@ class Header extends Component {
                     isOpen={this.state.modalIsOpen}
                     contentLabel="Login"
                     onRequestClose={this.closeModalHandler}
-                    style={customStyles}>
+                    style={customStyles}
+                    >
 
                     <Tabs className="tabs" value={this.state.value} onChange={this.tabChangeHandler}>
                         <Tab label="Login" />
